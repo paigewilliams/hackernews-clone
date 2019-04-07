@@ -13,15 +13,21 @@ const typeDefs = `
   }
 `
 
+let links = [{
+  id: 'link-0',
+  url: 'www.twitter.com',
+  description: 'Twitter'
+}]
+
 const resolvers = {
   Query: {
     info: () => `This is the API for my Hackersnews Clone!!`,
     feed: () => links,
-    Link: {
-      id: (parent) => parent.id,
-      description: (parent) => parent.description,
-      url: (parent) => parent.url,
-    }
+  },
+  Link: {
+    id: (parent) => parent.id,
+    url: (parent) => parent.url,
+    description: (parent) => parent.description,
   }
 }
 
